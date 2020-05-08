@@ -15,7 +15,9 @@ case "$1" in
      fi
    ;;
    "runserver")
-     php -S localhost:8015
+     kill -9 $(lsof -t -i tcp:8015)
+     nohup php -S localhost:8015 &
+     tail -f -n 1 .work-space/logs/stuffsdk.log
    ;;
    "startproject")
      git clone https://github.com/stuffsdk/project.git $2
