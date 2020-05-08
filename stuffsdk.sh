@@ -16,7 +16,7 @@ case "$1" in
    ;;
    "runserver")
      kill -9 $(lsof -t -i tcp:8015)
-     nohup php -S localhost:8015 &
+     nohup php -S localhost:8015 >/dev/null 2>&1 &
      tail -f -n 1 .work-space/logs/stuffsdk.log
    ;;
    "startproject")
