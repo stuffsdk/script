@@ -24,6 +24,6 @@ case "$1" in
      echo "project created successfully.";
    ;;
    *)
-     echo "Stuffsdk Version: 1.0.0";
+     echo "Stuffsdk Version: 1.0.1";
    ;;
 esac
