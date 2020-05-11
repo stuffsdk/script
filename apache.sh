@@ -49,8 +49,8 @@ git config --global user.email "server@${WEB_DOMAIN}"
 #mkdir ~/.ssh
 cd ~/.ssh
 ssh-keygen -t rsa -f ~/.ssh/bitbucket_rsa -q -N ""
-echo 'Host github.com
- IdentityFile ~/.ssh/gitlab_rsa' > ~/.ssh/config
+echo 'Host bitbucket.org
+ IdentityFile ~/.ssh/bitbucket_rsa' > ~/.ssh/config
 cd /var/www
 
 cat ~/.ssh/bitbucket_rsa.pub

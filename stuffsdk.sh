@@ -1,5 +1,15 @@
 #!/bin/bash
 
+VERSION='1.0.2 (Beta)';
+function stop_server()
+{
+    # perform cleanup here
+    echo '';
+    echo "Stoping server."
+    exit 2
+}
+
+trap "stop_server" 2
 
 case "$1" in
    "make")
@@ -15,15 +25,20 @@ case "$1" in
      fi
    ;;
    "runserver")
-     kill -9 $(lsof -t -i tcp:8015)
-     nohup php -S localhost:8015 >/dev/null 2>&1 &
+     nohup php -S $2 >/dev/null 2>&1 &
+     echo "Stuffsdk Version: $VERSION";
+     echo 'Server started.';
+     echo http://$2;
      tail -f -n 1 .work-space/logs/stuffsdk.log
    ;;
    "startproject")
      git clone https://github.com/stuffsdk/project.git $2
      echo "project created successfully.";
    ;;
+   "upgrade")
+      curl -s https://stuffsdk.com/setup.sh | sudo bash
+   ;;
    *)
-     echo "Stuffsdk Version: 1.0.1";
+     echo "Stuffsdk Version: $VERSION";
    ;;
 esac
