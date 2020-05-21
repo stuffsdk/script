@@ -38,6 +38,14 @@ case "$1" in
    "upgrade")
       curl -s https://stuffsdk.com/setup.sh | sudo bash
    ;;
+  "test")
+        if [ -e index.php ]
+        then
+             php index.php test
+        else
+             echo "Can't run test here entry point is missing please make sure you run test on your project root.";
+        fi
+   ;;
    *)
      echo "Stuffsdk Version: $VERSION";
    ;;
