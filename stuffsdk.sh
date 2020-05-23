@@ -38,6 +38,14 @@ case "$1" in
    "upgrade")
       curl -s https://stuffsdk.com/setup.sh | sudo bash
    ;;
+  "migrate")
+      if [ -e index.php ]
+        then
+             php index.php migrate
+        else
+             echo "Can't run migrate here entry point is missing please make sure you run test on your project root.";
+      fi
+   ;;
   "test")
         if [ -e index.php ]
         then
