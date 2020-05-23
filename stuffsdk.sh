@@ -40,10 +40,10 @@ case "$1" in
    ;;
   "migrate")
       if [ -e index.php ]
-        then
-             php index.php migrate
-        else
-             echo "Can't run migrate here entry point is missing please make sure you run test on your project root.";
+      then
+          php index.php migrate
+      else
+          echo "Can't run migrate here entry point is missing please make sure you run test on your project root.";
       fi
    ;;
   "test")
