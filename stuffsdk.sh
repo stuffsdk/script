@@ -29,7 +29,19 @@ case "$1" in
      echo "Stuffsdk Version: $VERSION";
      echo 'Server started.';
      echo http://$2;
-     tail -f -n 1 .work-space/logs/stuffsdk.log
+     if [ -e .work-space/logs/stuffsdk.log ]
+        timestamp=$(date +%d-%m-%Y_%H_%M_%S)
+        then
+             echo "Server Started "$timestamp"..." >> .work-space/logs/stuffsdk.log
+             tail -f .work-space/logs/stuffsdk.log
+        else
+             file=".work-space/logs/stuffsdk.log"
+             mkdir ".work-space/logs/"
+             echo "creating log file..."
+             echo "Server Started "$timestamp"..." >> $file
+             tail -f .work-space/logs/stuffsdk.log
+     fi
+
    ;;
    "startproject")
      git clone https://github.com/stuffsdk/project.git $2
