@@ -1,11 +1,11 @@
 #!/bin/bash
 
-VERSION='1.0.5 (Alpha)';
+VERSION='1.0.6 (Alpha)';
 function stop_server()
 {
     # perform cleanup here
     echo '';
-    echo "Stoping server."
+    echo "Stoping server..."
     exit 2
 }
 
@@ -87,7 +87,17 @@ case "$1" in
              sed "s/{name}/${2}/g" apps/$2/tests/.$file >> apps/$2/tests/$file
              rm apps/$2/tests/.$file
 
-             echo "app created successfully.";
+             echo "$2 app created successfully.";
+
+             if [ -e index.php ]
+                then
+                     php index.php +app $2
+                     echo "$2 app installed successfully."
+                else
+                     :
+             fi
+
+
       fi
    ;;
    "upgrade")
