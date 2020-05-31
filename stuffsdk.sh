@@ -44,17 +44,50 @@ case "$1" in
 
    ;;
    "startproject")
-     git clone https://github.com/stuffsdk/project.git $2
-     echo "project created successfully.";
+     if [ -e $2 ]
+        then
+             echo "[warning] project name is missing !"
+        else
+             git clone https://github.com/stuffsdk/project.git $2
+             echo "project created successfully.";
+     fi
    ;;
-   "startproject")
-     git clone https://github.com/stuffsdk/project.git $2
-     echo "project created successfully.";
+   "createapp")
+      if [ -e $2 ]
+        then
+             echo '[warning] app name is missing !';
+        else
+             #improvement required
+             git clone https://github.com/stuffsdk/app-structure.git apps/$2
+
+             file=init.php
+             mv apps/$2/$file apps/$2/.$file
+             sed "s/{name}/${2}/g" apps/$2/.$file >> apps/$2/$file
+             rm apps/$2/.$file
+
+             file=package.json
+             mv apps/$2/$file apps/$2/.$file
+             sed "s/{name}/${2}/g" apps/$2/.$file >> apps/$2/$file
+             rm apps/$2/.$file
+
+
+             file=SampleModel.php
+             mv apps/$2/models/$file apps/$2/models/.$file
+             sed "s/{name}/${2}/g" apps/$2/models/.$file >> apps/$2/models/$file
+             rm apps/$2/models/.$file
+
+             file=TestUnit.php
+             mv apps/$2/tests/$file apps/$2/tests/.$file
+             sed "s/{name}/${2}/g" apps/$2/tests/.$file >> apps/$2/tests/$file
+             rm apps/$2/tests/.$file
+
+             echo "app created successfully.";
+      fi
    ;;
    "upgrade")
       curl -s https://stuffsdk.com/setup.sh | sudo bash
    ;;
-  "migrate")
+   "migrate")
       if [ -e index.php ]
       then
           php index.php migrate

@@ -2,6 +2,52 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/foo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/food" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/ko" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/ma" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/master" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/masterw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/masterwaa" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/mic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/mic74" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/mic77" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/mic77kkfaw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/mic77kkjjk" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/mic77kkjjkaaaaa" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/mic8" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/miciii" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/mico" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/micoo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/micppp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/micpppaaa" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/micpppaaass" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/micu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/mio" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/mio3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/mio333" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/miohjhi" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/mioooo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/msa" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/pico" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/po" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/s" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/sale" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/saleaa" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/saleaadd" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/saleaadddd" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/saleaaddddaaaaaa" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/sm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/ssa" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/t" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/tttt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/ty" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/uuu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/yu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/yuio" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/yuiok" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/yuioko" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/apps/yuiokop" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/project" vcs="Git" />
   </component>
 </project>
