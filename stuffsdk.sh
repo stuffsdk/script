@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION='1.0.3 (Beta)';
+VERSION='1.0.4 (Alpha)';
 function stop_server()
 {
     # perform cleanup here
@@ -36,12 +36,16 @@ case "$1" in
              tail -f .work-space/logs/stuffsdk.log
         else
              file=".work-space/logs/stuffsdk.log"
-             mkdir ".work-space/logs/"
+             mkdir -p ".work-space/logs/"
              echo "creating log file..."
              echo "Server Started "$timestamp"..." >> $file
              tail -f .work-space/logs/stuffsdk.log
      fi
 
+   ;;
+   "startproject")
+     git clone https://github.com/stuffsdk/project.git $2
+     echo "project created successfully.";
    ;;
    "startproject")
      git clone https://github.com/stuffsdk/project.git $2
@@ -66,7 +70,11 @@ case "$1" in
              echo "Can't run test here entry point is missing please make sure you run test on your project root.";
         fi
    ;;
+   "--version")
+        echo "Stuffsdk Version: $VERSION";
+   ;;
    *)
-     echo "Stuffsdk Version: $VERSION";
+     echo "read more https://stuffsdk.com/stuffsdk/stuffsdk"
+     exit 0
    ;;
 esac
