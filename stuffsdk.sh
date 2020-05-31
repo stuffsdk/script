@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION='1.0.8 (Alpha)';
+VERSION='Stuffsdk Tool Script 1.1.0 (Alpha)';
 function stop_server()
 {
     # perform cleanup here
@@ -92,7 +92,6 @@ case "$1" in
              if [ -e index.php ]
                 then
                      php index.php +app $2
-                     echo "$2 app installed successfully."
                 else
                      :
              fi
@@ -134,15 +133,29 @@ case "$1" in
       then
           php index.php migrate
       else
-          echo "Can't run migrate here entry point is missing please make sure you run test on your project root.";
+          echo "Unable to complete this action. Are you sure you are in project root directory?";
       fi
    ;;
-  "test")
+   "createsuperuser")
+      if [ -e index.php ]
+      then
+          echo "Enter user's email address"
+          read email
+          echo "Enter user's password"
+          read password
+          echo "Re-enter user's password"
+          read repassword
+          php index.php createsuperuser $email $password
+      else
+          echo "Unable to complete this action. Are you sure you are in project root directory?";
+      fi
+   ;;
+   "test")
         if [ -e index.php ]
         then
              php index.php test
         else
-             echo "Can't run test here entry point is missing please make sure you run test on your project root.";
+             echo "Unable to complete this action. Are you sure you are in project root directory?";
         fi
    ;;
    "--version")
