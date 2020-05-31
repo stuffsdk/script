@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION='1.0.7 (Alpha)';
+VERSION='1.0.8 (Alpha)';
 function stop_server()
 {
     # perform cleanup here
@@ -102,6 +102,32 @@ case "$1" in
    ;;
    "upgrade")
       curl -s https://stuffsdk.com/setup.sh | sudo bash
+   ;;
+   "+app")
+        if [ -e $2 ]
+          then
+               echo "[warning] app name is missing !"
+          else
+               if [ -e index.php ]
+                then
+                    php index.php +app $2
+                else
+                    echo "Unable to complete this action. Are you sure you are in project root directory?";
+               fi
+        fi
+   ;;
+   "-app")
+      if [ -e $2 ]
+          then
+               echo "[warning] app name is missing !"
+          else
+               if [ -e index.php ]
+                then
+                    php index.php -app $2
+                else
+                    echo "Unable to complete this action. Are you sure you are in project root directory?";
+               fi
+        fi
    ;;
    "migrate")
       if [ -e index.php ]
