@@ -54,7 +54,7 @@ case "$1" in
         then
              echo "[warning] project name is missing !"
         else
-             git clone https://github.com/stuffsdk/project.git $2
+             git clone https://github.com/stuffsdk/project.git $2 && rm -rf $2/.git
              echo "project created successfully.";
      fi
    ;;
@@ -64,7 +64,7 @@ case "$1" in
              echo '[warning] app name is missing !';
         else
              #improvement required
-             git clone https://github.com/stuffsdk/app-structure.git apps/$2
+             git clone https://github.com/stuffsdk/app-structure.git apps/$2 && rm -rf apps/$2/.git
 
              file=init.php
              mv apps/$2/$file apps/$2/.$file
