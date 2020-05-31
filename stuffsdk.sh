@@ -27,20 +27,26 @@ case "$1" in
    "runserver")
      nohup php -S $2 >/dev/null 2>&1 &
      echo "Stuffsdk Version: $VERSION";
-     echo 'Server started.';
-     echo http://$2;
-     if [ -e .work-space/logs/stuffsdk.log ]
-        timestamp=$(date +%d-%m-%Y_%H_%M_%S)
+     echo 'Starting server...';
+
+     if [ -e $2 ]
         then
-             echo "Server Started "$timestamp"..." >> .work-space/logs/stuffsdk.log
-             tail -f .work-space/logs/stuffsdk.log
+             echo "[warning] host address is missing !"
         else
-             file=".work-space/logs/stuffsdk.log"
-             mkdir -p ".work-space/logs/"
-             echo "creating log file..."
-             echo "Server Started "$timestamp"..." >> $file
-             tail -f .work-space/logs/stuffsdk.log
+             echo http://$2;
+
+             if [ -e .work-space/logs/stuffsdk.log ]
+                then
+                     echo -n "" >> .work-space/logs/stuffsdk.log
+                     tail -f .work-space/logs/stuffsdk.log
+                else
+                     file=".work-space/logs/stuffsdk.log"
+                     mkdir -p ".work-space/logs/"
+                     echo -n "" >> $file
+                     tail -f .work-space/logs/stuffsdk.log
+             fi
      fi
+
 
    ;;
    "startproject")
