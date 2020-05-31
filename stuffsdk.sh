@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION='1.0.6 (Alpha)';
+VERSION='1.0.7 (Alpha)';
 function stop_server()
 {
     # perform cleanup here
