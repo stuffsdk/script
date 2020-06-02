@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION='Stuffsdk Tool Script 1.1.0 (Alpha)';
+VERSION='Stuffsdk Tool Script 1.1.1 (Alpha)';
 function stop_server()
 {
     # perform cleanup here
@@ -139,12 +139,10 @@ case "$1" in
    "createsuperuser")
       if [ -e index.php ]
       then
-          echo "Enter user's email address"
+          echo "What will be email address for this user?"
           read email
-          echo "Enter user's password"
+          echo "Enter password for $email"
           read password
-          echo "Re-enter user's password"
-          read repassword
           php index.php createsuperuser $email $password
       else
           echo "Unable to complete this action. Are you sure you are in project root directory?";
@@ -158,6 +156,9 @@ case "$1" in
              echo "Unable to complete this action. Are you sure you are in project root directory?";
         fi
    ;;
+   "drive")
+          stuffsdk startproject fox && cd fox && stuffsdk runserver localhost:8888
+     ;;
    "--version")
         echo "Stuffsdk Version: $VERSION";
    ;;
